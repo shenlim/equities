@@ -15,7 +15,7 @@ tq_get(symbol,
       from = from,
       to   = to)
 ```
-This grabs the stock's price data from Yahoo Finance. `symbol` represents a stock symbol, metal symbol, FRED code, etc. `get` represents the type of data to get for `symbol`. There are many data types, but we will use `"stock.prices"` to get the open, high, low, close, volume, and adjusted stock prices for `symbol`. `from` and `to` specifies the beginning and end dates of the data to collect, respectively. Note that `symbol`, `from`, and `to` are given variables which will later be defined in the overall function. It makes sense not to hard code these customizable parameters.
+This grabs the stock's price data from Yahoo Finance. `symbol` represents a stock symbol, metal symbol, FRED code, etc. `get` represents the type of data to get for `symbol`. There are many data types, but we will use `"stock.prices"` to get the open, high, low, close, volume, and adjusted stock prices for `symbol`. `from` and `to` specifies the beginning and end dates of the data to collect, respectively. Note that `symbol`, `from`, and `to` are assigned variables which will later be defined in the overall function. It makes sense not to hard code these customizable parameters.
 
 Next,
 ```r
