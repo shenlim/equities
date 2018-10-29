@@ -1,19 +1,19 @@
 library(tidyquant)
 
 beta <- function(symbol,index,from,to,period) {
-  capm_beta <- rename((tq_performance(data = left_join((symbol %>%
-                                                          tq_get(get  = "stock.prices",
-                                                                 from = from,
-                                                                 to   = to) %>%
+  capm_beta <- rename((tq_performance(data = left_join((tq_get(symbol,
+                                                               get  = "stock.prices",
+                                                               from = from,
+                                                               to   = to) %>%
                                                           tq_transmute(select     = adjusted, 
                                                                        mutate_fun = periodReturn, 
                                                                        period     = period, 
                                                                        type       = "log",
                                                                        col_rename = "Ra")),
-                                                       (index %>%
-                                                          tq_get(get  = "stock.prices",
-                                                                 from = from,
-                                                                 to   = to) %>%
+                                                       (tq_get(index,
+                                                               get  = "stock.prices",
+                                                               from = from,
+                                                               to   = to) %>%
                                                           tq_transmute(select     = adjusted, 
                                                                        mutate_fun = periodReturn, 
                                                                        period     = period, 
