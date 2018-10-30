@@ -1,3 +1,5 @@
+# Generating Beta with Tidyquant - Oct 2018. Author: Shen Lim
+# Copyright 2018, Shen Lim, All Rights Reserved.
 library(tidyquant)
 
 beta <- function(symbol,index,from,to,period) {
