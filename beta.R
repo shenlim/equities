@@ -90,7 +90,7 @@ beta <- function(symbol,index,from,to,period) {
                theme(panel.background = element_rect(fill   = "black",
                                                      colour = "black",
                                                      size   = 0.5, linetype = "solid"),
-                     panel.grid.major = element_line(size = 0.5, linetype = 'solid', colour = "gray50"), 
+                     panel.grid.major = element_line(size = 0.5, linetype = 'solid', colour = "gray50"),
                      panel.grid.minor = element_line(size = 0.25, linetype = 'solid', colour = "gray50")))
   return(list(ggplot, capm.beta))
 }
