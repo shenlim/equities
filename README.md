@@ -45,6 +45,12 @@ Inputs:
 * `to`: End date, in `yyyy-mm-dd` format.
 * `period` : Frequency, such as `"daily"`, `"weekly"`, `"monthly"`.
 
+The beta will be produced on the console. In addition, a scatterplot of stock returns regressed on index returns will be produced as well for visualization purposes. Below is a sample generated plot based on:
+```r
+beta(symbol = "AAPL", index = "SPY", from = "2013-10-30", to = "2018-10-30", period = "weekly")
+```
+![](beta_plot.png)
+
 ## Built With
 * [R](https://www.r-project.org/) - Software environment for statistical computing.
 * [RStudio](https://www.rstudio.com/) - Free and open-source IDE for R.
