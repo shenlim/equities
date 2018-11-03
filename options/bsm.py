@@ -1,8 +1,10 @@
+# Black-Scholes-Merton Model (BSM) - Nov 2018. Author: Shen Lim.
+# Copyright 2018, Shen Lim, All Rights Reserved.
 import numpy as np
 import scipy.stats as si
 
 '''
-Black-Scholes-Merton Model
+Black-Scholes-Merton Model for European Options
 
 S: Spot stock price
 K: Strike price
