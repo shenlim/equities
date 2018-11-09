@@ -42,12 +42,12 @@ def bs():
             cTheta = -((S * nPrime * sigma)/(2 * np.sqrt(T))) - (r * K * np.exp(-r * T) * N2)
             cRho = K * T * np.exp(-r * T) * N2
             
-            print("Price of Call: $", round(call, 4))
-            print("   Call Delta:  ", round(cDelta, 4))
-            print("        Gamma:  ", round(gamma, 4))
-            print("         Vega:  ", round(vega, 4))
-            print("   Call Theta:  ", round(cTheta, 4))
-            print("     Call Rho:  ", round(cRho, 4))
+            print("Price of Call: $", round(call, 4),
+            "\n   Call Delta:  ", round(cDelta, 4),
+            "\n        Gamma:  ", round(gamma, 4),
+            "\n         Vega:  ", round(vega, 4),
+            "\n   Call Theta:  ", round(cTheta, 4),
+            "\n     Call Rho:  ", round(cRho, 4))
 
         elif (call.lower() == "p") or (call.lower() == "put"):
             put = (K * np.exp(-r * T) * n2 - S * n1)
@@ -55,12 +55,12 @@ def bs():
             pTheta = -((S * nPrime * sigma)/(2 * np.sqrt(T))) + (r * K * np.exp(-r * T) * n2)
             pRho = -K * T * np.exp(-r * T) * n2
             
-            print("Price of Put: $", round(put, 4))
-            print("   Put Delta:  ", round(pDelta, 4))
-            print("       Gamma:  ", round(gamma, 4))
-            print("        Vega:  ", round(vega, 4))
-            print("   Put Theta:  ", round(pTheta, 4))
-            print("     Put Rho:  ", round(pRho, 4))
+            print("Price of Put: $", round(put, 4),
+            "\n   Put Delta:  ", round(pDelta, 4),
+            "\n       Gamma:  ", round(gamma, 4),
+            "\n        Vega:  ", round(vega, 4),
+            "\n   Put Theta:  ", round(pTheta, 4),
+            "\n     Put Rho:  ", round(pRho, 4))
 
         else:
             return "Invalid input."
@@ -84,12 +84,12 @@ def bs():
             cTheta = -((S * nPrime * sigma * np.exp(-q * T))/(2 * np.sqrt(T))) - (r * K * np.exp(-r * T) * N2) + (q * S * np.exp(-q * T) * N1)
             cRho = K * T * np.exp(-r * T) * N2
             
-            print("Price of Call: $", round(call, 4))
-            print("   Call Delta:  ", round(cDelta, 4))
-            print("        Gamma:  ", round(gamma, 4))
-            print("         Vega:  ", round(vega, 4))
-            print("   Call Theta:  ", round(cTheta, 4))
-            print("     Call Rho:  ", round(cRho, 4))
+            print("Price of Call: $", round(call, 4),
+            "\n   Call Delta:  ", round(cDelta, 4),
+            "\n        Gamma:  ", round(gamma, 4),
+            "\n         Vega:  ", round(vega, 4),
+            "\n   Call Theta:  ", round(cTheta, 4),
+            "\n     Call Rho:  ", round(cRho, 4))
 
         elif (call.lower() == "p") or (call.lower() == "put"):
             put = (K * np.exp(-r * T) * n2 - S * np.exp(-q * T) * n1)
@@ -97,12 +97,12 @@ def bs():
             pTheta = -((S * nPrime * sigma * np.exp(-q * T))/(2 * np.sqrt(T))) + (r * K * np.exp(-r * T) * n2) - (q * S * np.exp(-q * T) * n1)
             pRho = -K * T * np.exp(-r * T) * n2
             
-            print("Price of Put: $", round(put, 4))
-            print("   Put Delta:  ", round(pDelta, 4))
-            print("       Gamma:  ", round(gamma, 4))
-            print("        Vega:  ", round(vega, 4))
-            print("   Put Theta:  ", round(pTheta, 4))
-            print("     Put Rho:  ", round(pRho, 4))
+            print("Price of Put: $", round(put, 4),
+            "\n   Put Delta:  ", round(pDelta, 4),
+            "\n       Gamma:  ", round(gamma, 4),
+            "\n        Vega:  ", round(vega, 4),
+            "\n   Put Theta:  ", round(pTheta, 4),
+            "\n     Put Rho:  ", round(pRho, 4))
 
         else:
             return "Invalid input."
