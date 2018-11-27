@@ -24,7 +24,7 @@ def bs():
     q = float(input("Dividends? Enter 0 if none. "))
 
     if (q == 0): # No dividends.
-        
+
         d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
         d2 = (np.log(S / K) + (r - 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
         N1 = si.norm.cdf(d1, 0.0, 1.0) # N(.) is the cumulative distribution function of the standard normal distribution.
@@ -41,26 +41,30 @@ def bs():
             cDelta = N1
             cTheta = -((S * nPrime * sigma)/(2 * np.sqrt(T))) - (r * K * np.exp(-r * T) * N2)
             cRho = K * T * np.exp(-r * T) * N2
-            
+
             print("Price of Call: $", round(call, 4),
             "\n   Call Delta:  ", round(cDelta, 4),
             "\n        Gamma:  ", round(gamma, 4),
             "\n         Vega:  ", round(vega, 4),
             "\n   Call Theta:  ", round(cTheta, 4),
-            "\n     Call Rho:  ", round(cRho, 4))
+            "\n     Call Rho:  ", round(cRho, 4),
+            "\n           d1:  ", round(d1, 4),
+            "\n           d2:  ", round(d2, 4))
 
         elif (call.lower() == "p") or (call.lower() == "put"):
             put = (K * np.exp(-r * T) * n2 - S * n1)
             pDelta = N1 - 1
             pTheta = -((S * nPrime * sigma)/(2 * np.sqrt(T))) + (r * K * np.exp(-r * T) * n2)
             pRho = -K * T * np.exp(-r * T) * n2
-            
+
             print("Price of Put: $", round(put, 4),
             "\n   Put Delta:  ", round(pDelta, 4),
             "\n       Gamma:  ", round(gamma, 4),
             "\n        Vega:  ", round(vega, 4),
             "\n   Put Theta:  ", round(pTheta, 4),
-            "\n     Put Rho:  ", round(pRho, 4))
+            "\n     Put Rho:  ", round(pRho, 4),
+            "\n           d1:  ", round(d1, 4),
+            "\n           d2:  ", round(d2, 4))
 
         else:
             return "Invalid input."
@@ -83,26 +87,30 @@ def bs():
             cDelta = N1 * np.exp(-q * T)
             cTheta = -((S * nPrime * sigma * np.exp(-q * T))/(2 * np.sqrt(T))) - (r * K * np.exp(-r * T) * N2) + (q * S * np.exp(-q * T) * N1)
             cRho = K * T * np.exp(-r * T) * N2
-            
+
             print("Price of Call: $", round(call, 4),
             "\n   Call Delta:  ", round(cDelta, 4),
             "\n        Gamma:  ", round(gamma, 4),
             "\n         Vega:  ", round(vega, 4),
             "\n   Call Theta:  ", round(cTheta, 4),
-            "\n     Call Rho:  ", round(cRho, 4))
+            "\n     Call Rho:  ", round(cRho, 4),
+            "\n           d1:  ", round(d1, 4),
+            "\n           d2:  ", round(d2, 4))
 
         elif (call.lower() == "p") or (call.lower() == "put"):
             put = (K * np.exp(-r * T) * n2 - S * np.exp(-q * T) * n1)
             pDelta = (N1 - 1) * np.exp(-q * T)
             pTheta = -((S * nPrime * sigma * np.exp(-q * T))/(2 * np.sqrt(T))) + (r * K * np.exp(-r * T) * n2) - (q * S * np.exp(-q * T) * n1)
             pRho = -K * T * np.exp(-r * T) * n2
-            
+
             print("Price of Put: $", round(put, 4),
             "\n   Put Delta:  ", round(pDelta, 4),
             "\n       Gamma:  ", round(gamma, 4),
             "\n        Vega:  ", round(vega, 4),
             "\n   Put Theta:  ", round(pTheta, 4),
-            "\n     Put Rho:  ", round(pRho, 4))
+            "\n     Put Rho:  ", round(pRho, 4),
+            "\n           d1:  ", round(d1, 4),
+            "\n           d2:  ", round(d2, 4))
 
         else:
             return "Invalid input."
